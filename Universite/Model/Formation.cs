@@ -14,7 +14,9 @@ namespace Universite.Model
         public int AnneeDiplome { get; set; }
 
         // Lien de navigation
-        public ICollection<Etudiant>? EtudiantsInscrits { get; set; }
+        public ICollection<Etudiant>? EtudiantsInscrits { get; set; }.
+
+        public ICollection<UE>? UeAttache {  get; set; }
 
         // Données calculées non persistantes
         // Pas de set
