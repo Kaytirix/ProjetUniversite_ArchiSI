@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Universite.Data;
 using Universite.Model;
 
-namespace Universite.Pages.Formations
+namespace Universite.Pages.UEs
 {
     public class IndexModel : PageModel
     {
@@ -19,15 +19,12 @@ namespace Universite.Pages.Formations
             _context = context;
         }
 
-        public IList<Formation> Formation { get;set; } = default!;
+        public IList<UE> UE { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Formation = await _context.Formation
-                .Include(e => e.EtudiantsInscrits)
-                .Include(ue =>  ue.UeAttache)
-                .AsNoTracking()
-                .ToListAsync();
+            UE = await _context.UE
+                .Include(u => u.FormationAttache).ToListAsync();
         }
     }
 }

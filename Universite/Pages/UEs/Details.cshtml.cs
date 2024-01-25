@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Universite.Data;
 using Universite.Model;
 
-namespace Universite.Pages.Formations
+namespace Universite.Pages.UEs
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Universite.Pages.Formations
             _context = context;
         }
 
-        public Formation Formation { get; set; } = default!;
+        public UE UE { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,18 +28,14 @@ namespace Universite.Pages.Formations
                 return NotFound();
             }
 
-            var formation = await _context.Formation
-                .Include(f => f.EtudiantsInscrits)
-                .Include(Ue => Ue.UeAttache)
-                .FirstOrDefaultAsync(m => m.ID == id);
-            
-            if (formation == null)
+            var ue = await _context.UE.FirstOrDefaultAsync(m => m.ID == id);
+            if (ue == null)
             {
                 return NotFound();
             }
             else
             {
-                Formation = formation;
+                UE = ue;
             }
             return Page();
         }

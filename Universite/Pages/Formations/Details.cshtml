@@ -25,7 +25,7 @@
         </dd>
     </dl>
 </div>
-<div>
+<div id"ListeEtudiantInscrit">
     <table class="table">
         <thead>
             <tr>
@@ -52,6 +52,33 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Prenom)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div id"ListeUeAttache">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Formation.UeAttache.FirstOrDefault().Intitule)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Formation.UeAttache.FirstOrDefault().Numero)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Formation.UeAttache)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Intitule)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero)
                     </td>
                 </tr>
             }
