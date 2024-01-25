@@ -16,5 +16,10 @@ namespace Universite.Model
         public int? FormationAttacheID { get; set; }
 
         public Formation? FormationAttache { get; set; }
+
+        // Lien de navigation ManyToMany 
+        [Display(Name = "Enseignants de l’UE")]
+        public ICollection<Enseigner> LesEnseigner { get; set; }
+
     }
 }

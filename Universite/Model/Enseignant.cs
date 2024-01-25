@@ -12,5 +12,10 @@ namespace Universite.Model
 
         [Required]
         public string Prenom { get; set; }
+
+        // Lien ManyToMany 
+        [Display(Name = "UEs Enseignées")]
+        public ICollection<Enseigner> LesEnseigner { get; set; }
+
     }
 }
