@@ -22,6 +22,9 @@
             <th> 
                 @Html.DisplayNameFor(model => model.Formation[0].NbInscrits) 
             </th>
+            <th> 
+                @Html.DisplayNameFor(model => model.Formation[0].NbUe) 
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +38,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NbInscrits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbUe)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

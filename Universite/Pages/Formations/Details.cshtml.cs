@@ -28,7 +28,10 @@ namespace Universite.Pages.Formations
                 return NotFound();
             }
 
-            var formation = await _context.Formation.Include(f => f.EtudiantsInscrits).FirstOrDefaultAsync(m => m.ID == id);
+            var formation = await _context.Formation
+                .Include(f => f.EtudiantsInscrits)
+                .Include(Ue => Ue.UeAttache)
+                .FirstOrDefaultAsync(m => m.ID == id);
             
             if (formation == null)
             {

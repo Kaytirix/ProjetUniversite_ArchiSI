@@ -25,6 +25,7 @@ namespace Universite.Pages.Formations
         {
             Formation = await _context.Formation
                 .Include(e => e.EtudiantsInscrits)
+                .Include(ue =>  ue.UeAttache)
                 .AsNoTracking()
                 .ToListAsync();
         }

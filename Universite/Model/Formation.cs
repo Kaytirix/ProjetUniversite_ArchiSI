@@ -32,5 +32,19 @@ namespace Universite.Model
             }
         }
 
+        // Données calculées non persistantes
+        // Pas de set
+        [Display(Name = "Nombre d'EU")]
+        public int NbUe
+        {
+            get
+            {
+                if (UeAttache != null)
+                    return UeAttache.Count;
+                else
+                    return -1;
+            }
+        }
+
     }
 }
