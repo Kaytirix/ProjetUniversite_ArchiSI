@@ -18,6 +18,8 @@ namespace Universite.Model
 
         public ICollection<UE>? UeAttache {  get; set; }
 
+        public ICollection<UE>? UeAttache {  get; set; }
+
         // Données calculées non persistantes
         // Pas de set
         [Display(Name = "Nombre d'inscrits")]
