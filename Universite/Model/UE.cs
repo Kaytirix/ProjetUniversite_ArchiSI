@@ -12,5 +12,9 @@ namespace Universite.Model
 
         [Required]
         public string Intitule { get; set; }
+
+        public int? FormationAttacheID { get; set; }
+
+        public Formation? FormationAttache { get; set; }
     }
 }
