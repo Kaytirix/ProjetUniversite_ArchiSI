@@ -19,5 +19,6 @@ namespace Universite.Data
         public DbSet<UE>? UE { get; set; }
 
         public DbSet<Formation>? Formation { get; set; }
+        public DbSet<Universite.Model.Enseigner> Enseigner { get; set; } = default!;
     }
 }
