@@ -1,0 +1,17 @@
+﻿@page
+@model Universite.Pages.Notes.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Saisie des notes - Choissisez l'UE</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label class="control-label">Nom UE</label>
+        <select asp-for="UE.ID" class="form-control" asp-items="ViewBag.ListeUE"></select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Charger les notes de cette UE" class="btn btn-primary" />
+    </div>
+</form>
